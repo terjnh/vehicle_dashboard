@@ -3,8 +3,8 @@ import QtQuick.Controls 2.5
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: 960
+    height: 640
     title: qsTr("Tabs")
 
     SwipeView {
@@ -12,11 +12,12 @@ ApplicationWindow {
         anchors.fill: parent
         currentIndex: tabBar.currentIndex
 
-        Page1Form {
+        Home {
         }
 
-        Page2Form {
+        Audio {
         }
+
     }
 
     footer: TabBar {
@@ -24,10 +25,12 @@ ApplicationWindow {
         currentIndex: swipeView.currentIndex
 
         TabButton {
-            text: qsTr("Page 1")
+            text: qsTr("Home")
         }
+
         TabButton {
-            text: qsTr("Page 2")
+            text: qsTr("Audio")
         }
+
     }
 }
