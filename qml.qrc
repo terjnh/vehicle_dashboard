@@ -4,5 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>Home.qml</file>
         <file>Audio.qml</file>
+        <file>HomeFuelGauge.qml</file>
     </qresource>
 </RCC>

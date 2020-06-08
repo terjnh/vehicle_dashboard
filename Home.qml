@@ -42,6 +42,7 @@ Item {
             Keys.onReturnPressed: {
                 console.log("Name entered")
                 introFadeOut.running = true
+                fuelgauge.visible = true
             }
         }
         ParallelAnimation {
@@ -53,6 +54,18 @@ Item {
 
 
 
+    }
+
+    Column {
+        id: colFuel
+        width: 200
+        height: 300
+        anchors.left: parent.left
+        anchors.leftMargin: 20
+        anchors.top: parent.top
+        anchors.topMargin: 20
+
+        HomeFuelGauge { id: fuelgauge; visible: false }
     }
 
 }
