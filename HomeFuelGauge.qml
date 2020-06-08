@@ -7,12 +7,20 @@ Item {
         id: gaugeRow
         anchors.left: parent.left
         width: 100
+        height: 205
         Rectangle {
             id: fuelRect
             width: 50
             height: 200
             anchors.left: parent.left
+            anchors.bottom: parent.bottom; anchors.bottomMargin: 10;
             color: "green"
+            NumberAnimation on height {
+                id: decreaseFuel
+                running: false
+                from: fuelRect.height; to: 0
+                duration: 2000;
+            }
         }
         Label {
             id: lblFuel
@@ -24,10 +32,15 @@ Item {
     }
     Row {
         id: gaugeCtrlRow
-        anchors.left: gaugeRow.right
+        anchors.top: gaugeRow.bottom
         Button {
             id: emptyBtn
             text: "Empty Fuel"
+            onClicked: {
+                decreaseFuel.running = true
+            }
         }
     }
+
+
 }
