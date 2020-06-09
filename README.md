@@ -4,7 +4,7 @@
 ## UI build for a vehicle dashboard (SwipeView)
 
 Written in Qt, QML and C++
-</br>
+
 
 ### TO-DO
 HOME PAGE
