@@ -7,5 +7,6 @@
         <file>HomeFuelGauge.qml</file>
         <file>Intro.qml</file>
         <file>HomeWelcome.qml</file>
+        <file>HomeSpeed.qml</file>
     </qresource>
 </RCC>

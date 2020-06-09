@@ -10,6 +10,7 @@ Item {
     Label {
         id: welcomeText
         text: "Welcome " + user
+        horizontalAlignment: Text.AlignHCenter
         font.pixelSize: 22
         font.bold: false
         color: "#72d8f8"

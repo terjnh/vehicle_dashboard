@@ -32,6 +32,7 @@ Item {
             introFadeOut.running = true
             fuelgauge.visible = true
             welcomeLabel.visible = true
+            speedDisplay.visible = true
         }
     }
     ParallelAnimation {
