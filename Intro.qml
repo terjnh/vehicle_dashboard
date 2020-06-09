@@ -4,6 +4,10 @@ import QtQuick.Controls.Material 2.3
 
 Item {
     /*** Intro Label and Text Input Field ***/
+    id: intro
+
+    property alias username: tfTitle.text
+
     Label {
         id: lblTitle
         text: qsTr("Please Enter your Name:")
@@ -24,9 +28,10 @@ Item {
 
         focus: true
         Keys.onReturnPressed: {
-            console.log("Name entered")
+            console.log("Name entered: " + tfTitle.text)
             introFadeOut.running = true
             fuelgauge.visible = true
+            welcomeLabel.visible = true
         }
     }
     ParallelAnimation {

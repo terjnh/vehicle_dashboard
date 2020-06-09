@@ -6,5 +6,6 @@
         <file>Audio.qml</file>
         <file>HomeFuelGauge.qml</file>
         <file>Intro.qml</file>
+        <file>HomeWelcome.qml</file>
     </qresource>
 </RCC>
