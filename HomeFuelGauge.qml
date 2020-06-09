@@ -3,9 +3,13 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
 Item {
+
+    property var fuelMax: 200;
+
     Row {
         id: gaugeRow
         anchors.left: parent.left
+        anchors.leftMargin: 20
         width: 100
         height: 205
         Rectangle {
@@ -18,7 +22,13 @@ Item {
             NumberAnimation on height {
                 id: decreaseFuel
                 running: false
-                from: fuelRect.height; to: 0
+                from: fuelMax; to: 0
+                duration: 2000;
+            }
+            NumberAnimation on height {
+                id: increaseFuel
+                running: false
+                from: 0; to: fuelMax
                 duration: 2000;
             }
         }
@@ -30,7 +40,7 @@ Item {
             anchors.leftMargin: 5
         }
     }
-    Row {
+    Column {
         id: gaugeCtrlRow
         anchors.top: gaugeRow.bottom
         Button {
@@ -38,6 +48,14 @@ Item {
             text: "Empty Fuel"
             onClicked: {
                 decreaseFuel.running = true
+            }
+        }
+        Button {
+            id: fillBtn
+            width: emptyBtn.width
+            text: "Fill Fuel"
+            onClicked: {
+                increaseFuel.running = true
             }
         }
     }

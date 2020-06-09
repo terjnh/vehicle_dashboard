@@ -21,7 +21,7 @@ Item {
 
     Column {
         id: colFuel
-        width: 200; height: 300
+        width: 100; height: 205
         anchors.left: parent.left; anchors.leftMargin: 20;
         anchors.top: parent.top; anchors.topMargin: 20;
 
