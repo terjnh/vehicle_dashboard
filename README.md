@@ -8,6 +8,7 @@ Written in Qt, QML and C++
 </br>
 
 ### TO-DO
+
 HOME PAGE
 - [X] Make a Label: "Welcome User"
 - [X] Add functionality to refill fuel gauge
@@ -23,3 +24,7 @@ AUDIO PAGE
 - [ ] Resume Button
 - [ ] Track play progress bar (Utilization of C++ Timer class)
 - [ ] Volume Control
+
+Testing
+- [X] Create testing components to save to JSON [in Audio.qml]
+  - Current testing saves json file on Desktop
