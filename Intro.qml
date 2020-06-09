@@ -38,7 +38,7 @@ Item {
     ParallelAnimation {
         id: introFadeOut
         running: false
-        OpacityAnimator { target: lblTitle; from: 1; to: 0; duration: 1000; }
-        OpacityAnimator { target: tfTitle; from: 1; to: 0; duration: 1000; }
+        OpacityAnimator { target: lblTitle; from: 1; to: 0; duration: 500; }
+        OpacityAnimator { target: tfTitle; from: 1; to: 0; duration: 500; }
     } //ParallelAnimation
 }

@@ -8,6 +8,7 @@ Item {
     anchors.horizontalCenter: parent.horizontalCenter
 
     property var speed: "0"
+    property var rpm: "0"
 
     Row {
         id: odomRow
@@ -28,15 +29,27 @@ Item {
         anchors.top: odomRow.bottom
         anchors.topMargin: 20
         Dial {
-            id: dialRpm
+            id: dialSpeed
             value: 0.0
             onValueChanged: {
                 speed = Math.round((value * 100) * 1) / 1
-            }
+                aniDialRpm.running = true
+                if(value == 0.0) { aniDialRpm.running = false; rpm = 0; }
+            } //onValueChanged
         }
         Dial {
-            id: dialSpeed
+            id: dialRpm
+            value: rpm
 
+            SequentialAnimation {
+                id: aniDialRpm
+                running: false
+                loops: Animation.Infinite
+                NumberAnimation { target: dialRpm; property: "value"; from: 0.05; to: 0.1; duration: 250 }
+                NumberAnimation { target: dialRpm; property: "value"; from: 0.1; to: 0.06; duration: 250 }
+                NumberAnimation { target: dialRpm; property: "value"; from: 0.06; to: 0.15; duration: 250 }
+                NumberAnimation { target: dialRpm; property: "value"; from: 0.15; to: 0.05; duration: 250 }
+            }
         }
     }
 }

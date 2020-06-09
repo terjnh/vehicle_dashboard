@@ -15,7 +15,7 @@ HOME PAGE
 - [ ] Add RPM gauge  (spins randomly between a few numbers)
 - [ ] Gear Display
 - [ ] Add temperature monitoring
-</br>
+
 AUDIO PAGE
 - [ ] Play Button
 - [ ] Pause Button
