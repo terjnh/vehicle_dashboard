@@ -8,5 +8,6 @@
         <file>Intro.qml</file>
         <file>HomeWelcome.qml</file>
         <file>HomeSpeed.qml</file>
+        <file>HomeGear.qml</file>
     </qresource>
 </RCC>

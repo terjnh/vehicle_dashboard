@@ -7,8 +7,13 @@ Item {
     width: parent.width; height: parent.height
     anchors.horizontalCenter: parent.horizontalCenter
 
-    property var speed: "0"
-    property var rpm: "0"
+    property int speed: 0
+    property int maxSpeed: 100
+    property int accelerateDuration: 5000
+    property int decelerateDuration: 8000
+
+    property var rpm: 0
+
 
     Row {
         id: odomRow
@@ -22,6 +27,7 @@ Item {
             font.pixelSize: 60
         }
     }
+
     Row {
         id: dialRow
         spacing: 16
@@ -30,7 +36,7 @@ Item {
         anchors.topMargin: 20
         Dial {
             id: dialSpeed
-            value: 0.0
+            value: speed / 100
             onValueChanged: {
                 speed = Math.round((value * 100) * 1) / 1
                 aniDialRpm.running = true
@@ -51,5 +57,71 @@ Item {
                 NumberAnimation { target: dialRpm; property: "value"; from: 0.15; to: 0.05; duration: 250 }
             }
         }
+    } //Row (id: dialRow)
+
+    Row {
+        id: pedalsRow
+        spacing: 30
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: dialRow.bottom; anchors.topMargin: 30
+
+        Rectangle {
+            id: brakePedal
+            width: 60; height: 100
+            radius: 10
+            Label {
+                anchors.centerIn: parent
+                text: "S"; font.pixelSize: 40
+                color: "black"
+            }
+            MouseArea {
+                anchors.fill: parent
+                onPressAndHold: {
+                    speedDecrease.running = false
+                    speedDecrease.duration = 1000
+                    speedDecrease.running = true
+                }
+            }
+        }
+
+        Rectangle {
+            id: acceleratePedal
+            width: 60; height: 100
+            radius: 10
+            Label {
+                anchors.centerIn: parent
+                text: "W"; font.pixelSize: 40
+                color: "black"
+            }
+            MouseArea {
+                anchors.fill: parent
+                onPressAndHold: {
+                    speedDecrease.running = false
+                    speedIncrease.running = true
+                }
+                onReleased: {
+                    speedIncrease.running = false
+                    speedDecrease.duration = decelerateDuration  //after brakePedal is released, increase brake duration
+                    speedDecrease.running = true
+                }
+            }
+        }
+    }
+
+
+    // Speed Animation (might require quadratic function to produce a smoother result)
+    NumberAnimation on speed {
+        id: speedIncrease
+        running: false
+        from: speed
+        to: maxSpeed
+        duration: accelerateDuration
+    }
+    NumberAnimation on speed {
+        id: speedDecrease
+        running: false
+        from: speed
+        to: 0
+        duration: decelerateDuration
     }
 }

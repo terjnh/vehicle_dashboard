@@ -47,12 +47,20 @@ Item {
 
     Row {
         id: rowSpeed
-        width: colWelcome.width; height: 300
+        width: colWelcome.width;
+        height: 400
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top; anchors.topMargin: 80
 
         HomeSpeed { id: speedDisplay; anchors.fill: parent; visible: false; }
+    }
+
+    Column {
+        id: colGear
+        width: 100; height: 150
+        anchors.right: rowSpeed.left
+        anchors.bottom: rowSpeed.bottom
     }
 
 }

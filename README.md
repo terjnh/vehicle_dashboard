@@ -10,12 +10,15 @@ Written in Qt, QML and C++
 ### TO-DO
 
 HOME PAGE
+- [ ] RPM gauge: increases the "random" oscillation as speed increases
+- [ ] Gear Display (changes based on speed)
+- [ ] Add temperature monitoring
 - [X] Make a Label: "Welcome User"
 - [X] Add functionality to refill fuel gauge
-- [ ] Add speed gauge  (increases over dt)
-- [ ] Add RPM gauge  (spins randomly between a few numbers)
-- [ ] Gear Display
-- [ ] Add temperature monitoring
+- [X] Add speed dial
+- [X] Add RPM dial
+- [X] Add button to increase speed and decrease speed
+- [X] Linear speed acceleration / deceleration over time
 
 AUDIO PAGE
 - [ ] Play Button
