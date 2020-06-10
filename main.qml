@@ -6,7 +6,7 @@ ApplicationWindow {
     visible: true
     width: 960
     height: 640
-    title: qsTr("Tabs")
+    title: qsTr("Dashboard")
 
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue

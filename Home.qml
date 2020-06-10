@@ -8,7 +8,9 @@ Item {
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
-    property alias intro: introItem
+    // property alias intro: introItem
+    // property alias gear_page: homeGear
+
 
     Column {
         id: colTitle
@@ -47,20 +49,28 @@ Item {
 
     Row {
         id: rowSpeed
-        width: colWelcome.width;
+        width: colWelcome.width - 100;
         height: 400
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top; anchors.topMargin: 80
 
-        HomeSpeed { id: speedDisplay; anchors.fill: parent; visible: false; }
+        HomeSpeed {
+            id: speedDisplay;
+            anchors.fill: parent; visible: false;
+        }
     }
 
     Column {
         id: colGear
         width: 100; height: 150
         anchors.right: rowSpeed.left
-        anchors.bottom: rowSpeed.bottom
+        anchors.verticalCenter: rowSpeed.verticalCenter
+
+        HomeGear {
+            id: homeGear; anchors.fill: parent; visible: false;
+            gear_number: speedDisplay.gearNum
+        }
     }
 
 }

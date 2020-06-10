@@ -33,6 +33,7 @@ Item {
             fuelgauge.visible = true
             welcomeLabel.visible = true
             speedDisplay.visible = true
+            homeGear.visible = true
         }
     }
     ParallelAnimation {

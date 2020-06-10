@@ -14,6 +14,15 @@ Item {
 
     property var rpm: 0
 
+    // Pass speed property to HomeGear.qml
+    // Use a jS function to assign value to gearValue, which changes based on variable speed
+    property alias gearNum: speedpage.gearValue
+    property var gearValue: testing()
+    function testing() {
+        var gearValue = Math.round(speedpage.speed / 20);
+        return gearValue;
+    }
+
 
     Row {
         id: odomRow
@@ -78,7 +87,7 @@ Item {
                 anchors.fill: parent
                 onPressAndHold: {
                     speedDecrease.running = false
-                    speedDecrease.duration = 1000
+                    speedDecrease.duration = 2000
                     speedDecrease.running = true
                 }
             }
@@ -98,6 +107,7 @@ Item {
                 onPressAndHold: {
                     speedDecrease.running = false
                     speedIncrease.running = true
+                    testing()
                 }
                 onReleased: {
                     speedIncrease.running = false
