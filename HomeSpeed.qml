@@ -17,8 +17,8 @@ Item {
     // Pass speed property to HomeGear.qml
     // Use a jS function to assign value to gearValue, which changes based on variable speed
     property alias gearNum: speedpage.gearValue
-    property var gearValue: testing()
-    function testing() {
+    property var gearValue: gearCalc()
+    function gearCalc() {
         var gearValue = Math.round(speedpage.speed / 20);
         return gearValue;
     }
@@ -107,7 +107,7 @@ Item {
                 onPressAndHold: {
                     speedDecrease.running = false
                     speedIncrease.running = true
-                    testing()
+                    gearCalc()
                 }
                 onReleased: {
                     speedIncrease.running = false
