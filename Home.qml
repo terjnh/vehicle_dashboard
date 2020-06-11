@@ -2,15 +2,16 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
+import com.company.timer 1.0
+
 Item {
     id: homepage
 
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
-    // property alias intro: introItem
-    // property alias gear_page: homeGear
 
+    Timer { id: timerHome }
 
     Column {
         id: colTitle
@@ -80,7 +81,9 @@ Item {
         anchors.top: rowSpeed.bottom
         anchors.horizontalCenter: rowSpeed.horizontalCenter
 
-        HomeDistance { id: homeDistance; visible: false; }
+        HomeDistance {
+            id: homeDistance; visible: false;
+        }
     }
 
 }

@@ -7,7 +7,7 @@ import com.company.timer 1.0
 Item {
     anchors.fill: parent
 
-    property var distanceTotal: 0
+    property var distanceTotal: 0.0
 
     Row {
         width: parent.width; height: parent.height
@@ -18,19 +18,8 @@ Item {
             anchors.centerIn: parent
             font.family: "Bitstream Charter"
             font.pixelSize: 28
-            text: "000000" + " m"
+            text: timerHome.distanceTotal + " m"
         }
 
-    }
-
-    // Timer C++ Class
-    Timer {
-        id: timer
-
-        onDistanceChanged: {
-            distanceTotal = timer.distanceTotal
-            lblDistance.text = distanceTotal + " m"
-            console.log(distanceTotal)
-        }
     }
 }

@@ -53,9 +53,7 @@ Item {
                 aniDialRpm.running = true
                 if(value == 0.0) { aniDialRpm.running = false; rpm = 0; }
 
-                // Passing speed variable to Timer C++ class
-                var timerObj = timer.createObject(speedpage)
-                timerObj.speedValue = speed
+                timerHome.speedValue = speed
 
             } //onValueChanged
         }
@@ -123,6 +121,24 @@ Item {
                 }
             }
         }
+
+        Rectangle {
+            id: engineStarter
+            width: 60; height: 100
+            radius: 10
+            Label {
+                anchors.centerIn: parent
+                text: "EN"; font.pixelSize: 40
+                color: "black"
+            }
+            MouseArea {
+                id: mAreaEngineStart
+                anchors.fill: parent
+                onClicked: {
+                    timerHome.timerStart();
+                }
+            }
+        }
     }
 
 
@@ -143,9 +159,6 @@ Item {
     }
 
 
-    // Create component to aid passing speed variable to Timer C++ class
-    Component {
-        id: timer
-        Timer{}
-    }
+    // Create Timer to interact with Timer C++ class
+    // Timer { id: timerDist }
 }

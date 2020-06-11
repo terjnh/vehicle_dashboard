@@ -11,8 +11,9 @@ Written in Qt, QML and C++
 
 HOME PAGE
 - [ ] Distance meter
-    - [ ] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)
-    - [ ] Use speed value in Timer C++ class to calculate distance per timeout (currently 1s)
+    - [ ] For aesthetics, keep distance timer with specific no. of "zeroes" in front of it
+    - [X] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)
+    - [X] Use speed value in Timer C++ class to calculate distance per timeout (currently 1s)
     - [X] Speed value from HomeSpeed.qml is able to be passed to Timer C++ class
     - [X] QML component to display distance travelled
     - [X] Register QML type for Timer C++ class

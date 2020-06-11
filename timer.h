@@ -24,9 +24,14 @@ public:
     int speedValue();
     void setSpeedValue(QVariant data);
 
+public slots:
+    void timerStart();
+
 signals:
     void distanceChanged();  //emit after each timeout()
     void speedValueChanged();
+
+    void timerStarted();
 
 private slots:
     void timeout();
@@ -34,8 +39,8 @@ private slots:
 private:
     QTimer m_timer;  //Retrieve speed every second, and calculate a distance value per sec
     double const m_timerInterval = 1000.0;
-    double m_dist;  //m_dist in metres
-    int m_speed;
+    double m_dist = 0.0;  //m_dist in metres
+    int m_speed = 0;
 
 };
 
