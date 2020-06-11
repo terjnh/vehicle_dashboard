@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 
 #include "backend.h"
+#include "timer.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
 
     // Register QML Types
     qmlRegisterType<Backend>("com.company.backend", 1, 0, "Backend");
+    qmlRegisterType<Timer>("com.company.timer", 1, 0, "Timer");
 
 
     QQmlApplicationEngine engine;

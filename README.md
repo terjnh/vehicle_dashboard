@@ -10,8 +10,14 @@ Written in Qt, QML and C++
 ### TO-DO
 
 HOME PAGE
+- [ ] Distance meter
+    - [ ] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)
+    - [ ] Use speed value in Timer C++ class to calculate distance per timeout (currently 1s)
+    - [X] Speed value from HomeSpeed.qml is able to be passed to Timer C++ class
+    - [X] QML component to display distance travelled
+    - [X] Register QML type for Timer C++ class
+    - [X] Timer C++ class created to calculate distance
 - [ ] RPM gauge: increases the "random" oscillation as speed increases
-- [ ] Gear Display (changes based on speed)
 - [ ] Add temperature monitoring
 - [X] Make a Label: "Welcome User"
 - [X] Add functionality to refill fuel gauge
@@ -19,6 +25,7 @@ HOME PAGE
 - [X] Add RPM dial
 - [X] Add button to increase speed and decrease speed
 - [X] Linear speed acceleration / deceleration over time
+- [X] Gear Display (changes based on speed)
 
 AUDIO PAGE
 - [ ] Play Button
@@ -30,4 +37,4 @@ AUDIO PAGE
 
 Testing
 - [X] Create testing components to save to JSON [in Audio.qml]
-  - Current testing saves json file on Desktop
+    - Current testing saves json file on Desktop

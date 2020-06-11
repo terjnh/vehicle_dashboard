@@ -50,7 +50,7 @@ Item {
     Row {
         id: rowSpeed
         width: colWelcome.width - 100;
-        height: 400
+        height: 350
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top; anchors.topMargin: 80
@@ -71,6 +71,16 @@ Item {
             id: homeGear; anchors.fill: parent; visible: false;
             gear_number: speedDisplay.gearNum
         }
+    }
+
+    Column {
+        id: colDistance
+        width: rowSpeed.width
+        height: 50
+        anchors.top: rowSpeed.bottom
+        anchors.horizontalCenter: rowSpeed.horizontalCenter
+
+        HomeDistance { id: homeDistance; visible: false; }
     }
 
 }

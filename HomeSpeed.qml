@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
+import com.company.timer 1.0
+
 Item {
     id: speedpage
     width: parent.width; height: parent.height
@@ -50,6 +52,11 @@ Item {
                 speed = Math.round((value * 100) * 1) / 1
                 aniDialRpm.running = true
                 if(value == 0.0) { aniDialRpm.running = false; rpm = 0; }
+
+                // Passing speed variable to Timer C++ class
+                var timerObj = timer.createObject(speedpage)
+                timerObj.speedValue = speed
+
             } //onValueChanged
         }
         Dial {
@@ -133,5 +140,12 @@ Item {
         from: speed
         to: 0
         duration: decelerateDuration
+    }
+
+
+    // Create component to aid passing speed variable to Timer C++ class
+    Component {
+        id: timer
+        Timer{}
     }
 }
