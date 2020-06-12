@@ -2,9 +2,13 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
+import com.company.fueldata 1.0
+
 Item {
 
     property var fuelMax: 200;
+    property var fuelValue: fuelData.fuelValue
+
 
     Row {
         id: gaugeRow
@@ -15,14 +19,14 @@ Item {
         Rectangle {
             id: fuelRect
             width: 50
-            height: 200
+            height: fuelValue
             anchors.left: parent.left
             anchors.bottom: parent.bottom; anchors.bottomMargin: 10;
             color: "green"
             NumberAnimation on height {
                 id: decreaseFuel
                 running: false
-                from: fuelMax; to: 0
+                from: fuelValue; to: 0
                 duration: 2000;
             }
             NumberAnimation on height {

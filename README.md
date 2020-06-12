@@ -27,7 +27,7 @@ Written in Qt, QML and C++
     - [X] Add button to increase speed and decrease speed
     - [X] Linear speed acceleration / deceleration over time
 
-- [ ] HomeFuelGauge.qml
+- [X] HomeFuelGauge.qml
     - [X] Add functionality to refill fuel gauge
 - [ ] Add temperature monitoring
 - [ ] Disable accelerate / brake pedals when engine start is OFF
@@ -41,6 +41,9 @@ Written in Qt, QML and C++
     - [X] Button to save vehicle configuration into json format
         - currently only saves distance information
     - [X] Button to load vehicle configuration from json format
+    - Vehicle Configurations to be saved:
+        - [X] Distance travelled
+        - [X] Fuel level
 
 #### AUDIO PAGE
 - [ ] Play Button

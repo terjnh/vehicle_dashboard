@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         backend.cpp \
+        fueldata.cpp \
         main.cpp \
         timer.cpp
 
@@ -33,6 +34,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     backend.h \
+    fueldata.h \
     timer.h
 
 DISTFILES += \

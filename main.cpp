@@ -3,6 +3,7 @@
 
 #include "backend.h"
 #include "timer.h"
+#include "fueldata.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
     // Register QML Types
     qmlRegisterType<Backend>("com.company.backend", 1, 0, "Backend");
     qmlRegisterType<Timer>("com.company.timer", 1, 0, "Timer");
+    qmlRegisterType<FuelData>("com.company.fueldata", 1, 0, "FuelData");
 
 
     QQmlApplicationEngine engine;

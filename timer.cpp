@@ -8,7 +8,7 @@ Timer::Timer(QObject *parent) : QObject(parent)
 
 double Timer::distance()
 {
-    qInfo() << "Returning distance value: " << m_dist;
+    // qInfo() << "Returning distance value: " << m_dist;
     return m_dist;
 }
 
@@ -28,7 +28,7 @@ int Timer::speedValue()
 void Timer::setSpeedValue(QVariant data)
 {
     m_speed = data.toInt();
-    qInfo() << m_speed;
+    // qInfo() << m_speed;
 }
 
 void Timer::timerStart()

@@ -11,9 +11,11 @@ Item {
 
     property var jsonString: ""
     property var distanceData: ""
+    property var fuelValue: ""
 
     property var loadedJsonString: ""
     property var distanceString: ""
+    property var fuelString: ""
 
     Column {
 
@@ -31,13 +33,13 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Save"
 
-            property var information: {"distance": ""}
+            property var information: {"distance": "", "fuel": ""}
 
             onClicked: {
                 information.distance = distanceData
+                information.fuel = fuelValue
                 var jsonData = JSON.stringify(information, null, "\t")
                 jsonString = jsonData
-                console.log(jsonString)
                 saveDialog.open()
             }
         }
@@ -80,9 +82,11 @@ Item {
             loadedJsonString = backend.data  // load entire JSON string into 'loadedJsonString'
             var JsonObject = JSON.parse(loadedJsonString)
             distanceString = JsonObject.distance;
+            fuelString = JsonObject.fuel
 
             // Set loaded json data into Timer.h class -> m_dist
             timerHome.distanceTotal = distanceString
+            fuelData.fuelValue = fuelString
         }
     }
 

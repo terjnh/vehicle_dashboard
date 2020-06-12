@@ -3,6 +3,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
 import com.company.timer 1.0
+import com.company.fueldata 1.0
 
 Item {
     id: speedpage
@@ -53,6 +54,7 @@ Item {
                 aniDialRpm.running = true
                 if(value == 0.0) { aniDialRpm.running = false; rpm = 0; }
 
+                // Binds speed variable to speedValue in Q_PROPERTY (Timer C++ Class)
                 timerHome.speedValue = speed
 
             } //onValueChanged
@@ -138,6 +140,7 @@ Item {
                 onClicked: {
                     engineStarter.color = "lightgreen";
                     timerHome.timerStart();
+                    fuelData.timerStart();
                 }
             }
         }
@@ -158,6 +161,7 @@ Item {
                 onClicked: {
                     engineStopper.color = "lightgreen";
                     timerHome.timerStop();
+                    fuelData.timerStop();
                 }
             }
 
