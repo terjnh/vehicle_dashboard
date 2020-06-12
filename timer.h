@@ -6,6 +6,12 @@
 #include <QVariant>
 #include <QDebug>
 
+/*
+ * Timer Class handles
+ *  - Distance travelled data
+ *  - Calculation of distance based off speed recorded every second
+ */
+
 class Timer : public QObject
 {
     Q_OBJECT
@@ -26,19 +32,21 @@ public:
 
 public slots:
     void timerStart();
+    void timerStop();
 
 signals:
     void distanceChanged();  //emit after each timeout()
     void speedValueChanged();
 
     void timerStarted();
+    void timerStopped();
 
 private slots:
     void timeout();
 
 private:
     QTimer m_timer;  //Retrieve speed every second, and calculate a distance value per sec
-    double const m_timerInterval = 1000.0;
+    double const m_timerInterval = 500.0;
     double m_dist = 0.0;  //m_dist in metres
     int m_speed = 0;
 

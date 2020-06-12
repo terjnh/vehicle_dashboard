@@ -10,8 +10,9 @@ Item {
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
-
+    // C++ Timer Class
     Timer { id: timerHome }
+
 
     Column {
         id: colTitle
@@ -63,6 +64,18 @@ Item {
     }
 
     Column {
+        id: colDistance
+        width: rowSpeed.width
+        height: 50
+        anchors.top: rowSpeed.bottom
+        anchors.horizontalCenter: rowSpeed.horizontalCenter
+
+        HomeDistance {
+            id: homeDistance; visible: false;
+        }
+    }
+
+    Column {
         id: colGear
         width: 100; height: 150
         anchors.right: rowSpeed.left
@@ -75,16 +88,20 @@ Item {
     }
 
     Column {
-        id: colDistance
-        width: rowSpeed.width
-        height: 50
-        anchors.top: rowSpeed.bottom
-        anchors.horizontalCenter: rowSpeed.horizontalCenter
+        id: colSaveLoad
+        y: 378
+        width: 110
+        height: 100
+        anchors.bottom: colWelcome.bottom; anchors.bottomMargin: 10
+        anchors.left: colFuel.left
 
-        HomeDistance {
-            id: homeDistance; visible: false;
+        HomeSaveLoad {
+            id: homeSaveLoad; visible: false;
+            distanceData: timerHome.distanceTotal
         }
     }
+
+
 
 }
 

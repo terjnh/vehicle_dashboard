@@ -124,21 +124,45 @@ Item {
 
         Rectangle {
             id: engineStarter
-            width: 60; height: 100
+            width: 25; height: 100
+            color: "red"
             radius: 10
             Label {
                 anchors.centerIn: parent
-                text: "EN"; font.pixelSize: 40
+                text: "1"; font.pixelSize: 20
                 color: "black"
             }
             MouseArea {
                 id: mAreaEngineStart
                 anchors.fill: parent
                 onClicked: {
+                    engineStarter.color = "lightgreen";
                     timerHome.timerStart();
                 }
             }
         }
+
+        Rectangle {
+            id: engineStopper
+            width: 25; height: 100
+            color: "red"
+            radius: 10
+            Label {
+                anchors.centerIn: parent
+                text: "0"; font.pixelSize: 20
+                color: "black"
+            }
+            MouseArea {
+                id: mAreaEngineStop
+                anchors.fill: parent
+                onClicked: {
+                    engineStopper.color = "lightgreen";
+                    timerHome.timerStop();
+                }
+            }
+
+        }
+
     }
 
 

@@ -10,5 +10,6 @@
         <file>HomeSpeed.qml</file>
         <file>HomeGear.qml</file>
         <file>HomeDistance.qml</file>
+        <file>HomeSaveLoad.qml</file>
     </qresource>
 </RCC>

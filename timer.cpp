@@ -37,10 +37,16 @@ void Timer::timerStart()
     emit timerStarted();
 }
 
+void Timer::timerStop()
+{
+    m_timer.stop();
+    emit timerStopped();
+}
+
 void Timer::timeout()
 {
     // calculate distance per step (each timeout duration, defined by m_timerInterval) here
-    m_dist = int(m_dist + (m_speed / 3600.0 * 1000.0));
+    m_dist = int(m_dist + (m_speed / 3600.0 * m_timerInterval));
     qDebug() << "Speed at timeout: " << m_speed;
     qDebug() << "Distance at timeout: " << m_dist;
     emit distanceChanged();

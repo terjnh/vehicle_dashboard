@@ -34,6 +34,7 @@ Item {
             speedDisplay.visible = true
             homeGear.visible = true
             homeDistance.visible = true
+            homeSaveLoad.visible = true
         }
     }
     ParallelAnimation {

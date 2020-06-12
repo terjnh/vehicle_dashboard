@@ -1,13 +1,14 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import QtQuick.Window 2.3
+import QtQuick.Dialogs 1.2
 
 import com.company.timer 1.0
+import com.company.backend 1.0
 
 Item {
     anchors.fill: parent
-
-    property var distanceTotal: 0.0
 
     Row {
         width: parent.width; height: parent.height
@@ -20,6 +21,5 @@ Item {
             font.pixelSize: 28
             text: timerHome.distanceTotal + " m"
         }
-
     }
 }
