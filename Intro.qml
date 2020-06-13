@@ -39,6 +39,7 @@ Item {
             homeStatus.visible = true
             homeIgnition.visible = true
             homeTemperature.visible = true
+            homeMisc.visible = true
         }
     }
     ParallelAnimation {

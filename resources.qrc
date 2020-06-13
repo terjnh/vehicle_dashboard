@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/turnSignalRight.png</file>
+        <file>images/turnSignalLeft.png</file>
+    </qresource>
+</RCC>

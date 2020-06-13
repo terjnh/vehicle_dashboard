@@ -10,6 +10,12 @@ Written in Qt, QML and C++
 ### TO-DO
 
 #### HOME PAGE
+- [ ] HomeMisc.qml
+    - [ ] Add Turn Signal Icons (onClick: flashing animation runs?)
+    - [ ] Add Engine Check Icon (after certain distance, engine check turns on ?)
+    - [ ] Engine Oil Change Icon
+    - [ ] Empty Fuel Icon
+    - [ ] Headlights Icon (Off, Low Beam, High Beam)
 - [X] HomeDistance.qml
     - [ ] For aesthetics, keep distance timer with specific no. of "zeroes" in front of it
     - [X] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)

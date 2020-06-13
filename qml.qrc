@@ -14,5 +14,7 @@
         <file>HomeStatus.qml</file>
         <file>HomeIgnition.qml</file>
         <file>HomeTemperature.qml</file>
+        <file>HomeMisc.qml</file>
+        <file>IconsModel.qml</file>
     </qresource>
 </RCC>

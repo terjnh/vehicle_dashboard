@@ -87,36 +87,6 @@ Item {
     }
 
     Column {
-        id: colStatus
-        width: 200
-        height: 110
-        anchors.left: rowSpeed.right
-        anchors.leftMargin: 120
-        anchors.top: rowSpeed.top
-        anchors.topMargin: 0
-        HomeStatus {
-            id: homeStatus; visible: false;
-        }
-    }
-
-    Column {
-        id: colIgnition
-        x: 645
-        y: 800
-        width: 160
-        height: 100
-        anchors.bottom: rowSpeed.bottom
-        anchors.bottomMargin: 30
-        anchors.left: rowSpeed.right
-        anchors.leftMargin: -20
-        HomeIgnition {
-            id: homeIgnition; visible: false;
-        }
-    }
-
-
-
-    Column {
         id: colSaveLoad
         y: 378
         width: 110
@@ -143,6 +113,50 @@ Item {
             //temperatureValue
         }
     }
+
+    Column {
+        id: colStatus
+        width: 200
+        height: 110
+        anchors.left: rowSpeed.right
+        anchors.leftMargin: 120
+        anchors.top: rowSpeed.top
+        anchors.topMargin: 0
+        HomeStatus {
+            id: homeStatus; visible: false;
+        }
+    }
+
+    Column {
+        id: colIgnition
+        x: 645
+        y: 800
+        width: 160
+        height: 100
+        anchors.bottom: rowSpeed.bottom
+        anchors.bottomMargin: 30
+        anchors.left: rowSpeed.right
+        anchors.leftMargin: -60
+        HomeIgnition {
+            id: homeIgnition; visible: false;
+        }
+    }
+
+
+    Column {
+        id: colMisc
+        width: colStatus.width
+        height: 350
+        anchors.top: colTemperature.bottom
+        anchors.left: colIgnition.right
+        anchors.leftMargin: 40
+        HomeMisc {
+            id: homeMisc; visible: false;
+        }
+    }
+
+
+
 
 
 
