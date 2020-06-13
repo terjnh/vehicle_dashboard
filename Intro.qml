@@ -11,6 +11,7 @@ Item {
     Label {
         id: lblTitle
         text: qsTr("Please Enter your Name:")
+        color: "#72d8f8"
         anchors.left: parent.left; anchors.leftMargin: 100
         font.pointSize: 16
         anchors.verticalCenter: parent.verticalCenter
@@ -35,6 +36,8 @@ Item {
             homeGear.visible = true
             homeDistance.visible = true
             homeSaveLoad.visible = true
+            homeStatus.visible = true
+            homeIgnition.visible = true
         }
     }
     ParallelAnimation {

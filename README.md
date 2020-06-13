@@ -28,7 +28,7 @@ Written in Qt, QML and C++
     - [X] Linear speed acceleration / deceleration over time
 
 - [X] HomeFuelGauge.qml
-    - [X] Add functionality to refill fuel gauge
+    - [X] 'Empty Fuel' and 'Fill Fuel' button allows UI to show more realistic animation
 - [ ] Add temperature monitoring
 - [ ] Disable accelerate / brake pedals when engine start is OFF
 - [X] HomeWelcome.qml
@@ -44,6 +44,9 @@ Written in Qt, QML and C++
     - Vehicle Configurations to be saved:
         - [X] Distance travelled
         - [X] Fuel level
+
+- [X] HomeIgnition.qml
+    - [X] Created Toggle Switch to turn Engine ON/OFF
 
 #### AUDIO PAGE
 - [ ] Play Button

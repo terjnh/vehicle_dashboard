@@ -9,17 +9,19 @@ import com.company.backend 1.0
 Item {
     anchors.fill: parent
 
+    // WRITE
     property var jsonString: ""
+    property var nameData: ""
     property var distanceData: ""
     property var fuelValue: ""
 
+    // READ
     property var loadedJsonString: ""
+    property var nameString: ""
     property var distanceString: ""
     property var fuelString: ""
 
     Column {
-
-
         anchors.fill: parent
         spacing: 4
         Label {
@@ -33,11 +35,13 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Save"
 
-            property var information: {"distance": "", "fuel": ""}
+            property var information: {"name": "", "info": {"distance": "", "fuel": ""}}
 
             onClicked: {
-                information.distance = distanceData
-                information.fuel = fuelValue
+                information.name = nameData
+                information.info.distance = distanceData
+                information.info.fuel = fuelValue
+
                 var jsonData = JSON.stringify(information, null, "\t")
                 jsonString = jsonData
                 saveDialog.open()
@@ -50,6 +54,7 @@ Item {
             text: "Load"
             onClicked: {
                 loadDialog.open()
+                homeStatus.status_info = "Config\nLoaded"
             }
         }
     }
@@ -81,12 +86,14 @@ Item {
             backend.path = loadDialog.fileUrl
             loadedJsonString = backend.data  // load entire JSON string into 'loadedJsonString'
             var JsonObject = JSON.parse(loadedJsonString)
-            distanceString = JsonObject.distance;
-            fuelString = JsonObject.fuel
+            nameString = JsonObject.name
+            distanceString = JsonObject.info.distance;
+            fuelString = JsonObject.info.fuel
 
             // Set loaded json data into Timer.h class -> m_dist
             timerHome.distanceTotal = distanceString
             fuelData.fuelValue = fuelString
+            welcomeLabel.user = nameString
         }
     }
 

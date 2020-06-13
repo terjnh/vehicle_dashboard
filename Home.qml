@@ -28,8 +28,8 @@ Item {
     Column {
         id: colFuel
         width: 200; height: 352
-        anchors.left: parent.left; anchors.leftMargin: 20;
-        anchors.top: parent.top; anchors.topMargin: 20;
+        anchors.left: parent.left; anchors.leftMargin: 60
+        anchors.top: rowSpeed.top; anchors.topMargin: 0
         HomeFuelGauge {
             id: fuelgauge;
             anchors.fill: parent; visible: false
@@ -51,11 +51,13 @@ Item {
 
     Row {
         id: rowSpeed
+        x: -10
+        y: 580
         width: colWelcome.width - 100;
         height: 350
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: parent.top; anchors.topMargin: 80
+        anchors.top: parent.top; anchors.topMargin: 50
         HomeSpeed {
             id: speedDisplay;
             anchors.fill: parent; visible: false;
@@ -85,6 +87,36 @@ Item {
     }
 
     Column {
+        id: colStatus
+        width: 200
+        height: 120
+        anchors.left: rowSpeed.right
+        anchors.leftMargin: 120
+        anchors.top: rowSpeed.top
+        anchors.topMargin: 0
+        HomeStatus {
+            id: homeStatus; visible: false;
+        }
+    }
+
+    Column {
+        id: colIgnition
+        x: 645
+        y: 800
+        width: 160
+        height: 100
+        anchors.bottom: rowSpeed.bottom
+        anchors.bottomMargin: 30
+        anchors.left: rowSpeed.right
+        anchors.leftMargin: -20
+        HomeIgnition {
+            id: homeIgnition; visible: false;
+        }
+    }
+
+
+
+    Column {
         id: colSaveLoad
         y: 378
         width: 110
@@ -93,10 +125,22 @@ Item {
         anchors.left: colFuel.left
         HomeSaveLoad {
             id: homeSaveLoad; visible: false;
+            nameData: welcomeLabel.user;
             distanceData: timerHome.distanceTotal;
             fuelValue: fuelData.fuelValue;
         }
     }
+
+    Column {
+        id: colTemperature
+        width: colStatus.width; height: 100
+        anchors.horizontalCenter: colStatus.horizontalCenter
+        anchors.top: colStatus.bottom;
+        anchors.topMargin: 6
+    }
+
+
+
 
 
 

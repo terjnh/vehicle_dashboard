@@ -32,7 +32,7 @@ Item {
             NumberAnimation on height {
                 id: increaseFuel
                 running: false
-                from: 0; to: fuelMax
+                from: fuelValue; to: fuelMax
                 duration: 2000;
             }
         }

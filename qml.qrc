@@ -11,5 +11,7 @@
         <file>HomeGear.qml</file>
         <file>HomeDistance.qml</file>
         <file>HomeSaveLoad.qml</file>
+        <file>HomeStatus.qml</file>
+        <file>HomeIgnition.qml</file>
     </qresource>
 </RCC>

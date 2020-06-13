@@ -51,6 +51,13 @@ Item {
             id: tfAge
             placeholderText: "Input Age"
         }
+        Label {
+            text: "Occupation: "
+        }
+        TextField {
+            id: tfOccupation
+            placeholderText: "Input Occupation"
+        }
     }
 
     Button {
@@ -58,18 +65,24 @@ Item {
         anchors.top: grid.bottom
         text: "Save to JSON"
 
-        property var data: {"name": "", "age": ""}
+        property var data: {
+                "user": "",
+                "info": {
+                    "age": "",
+                    "occupation": ""
+                }
+            }
         onClicked: {
             //var JsonObject = JSON.parse(data);
 
             // Store values into JSON objects
-            data.name = tfName.text
-            data.age = tfAge.text
+            data.user = tfName.text
+            data.info.age = tfAge.text
+            data.info.occupation = tfOccupation.text
 
             var jsonData = JSON.stringify(data, null, "\t")
             jsonString = jsonData
 
-            console.log(data["age"])
             console.log(jsonData)
 
             // Now we will want to pass jsonData to C++ class to save as a local .json file
