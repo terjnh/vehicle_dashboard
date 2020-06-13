@@ -34,7 +34,7 @@ void FuelData::timerStop()
 
 void FuelData::timeout()
 {
-    m_fuelValue = m_fuelValue - 3;
+    m_fuelValue = m_fuelValue - 10;
     qDebug() << "Fuel Value: " << m_fuelValue;
     emit fuelValueChanged();
 }

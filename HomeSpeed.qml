@@ -104,6 +104,7 @@ Item {
             id: acceleratePedal
             width: 60; height: 100
             radius: 10
+            color: homeIgnition.engineState == "ON" ? "white" : "black"
             Label {
                 anchors.centerIn: parent
                 text: "W"; font.pixelSize: 40
@@ -111,6 +112,7 @@ Item {
             }
             MouseArea {
                 anchors.fill: parent
+                enabled: homeIgnition.engineState == "ON" ? true : false
                 onPressAndHold: {
                     speedDecrease.running = false
                     speedIncrease.running = true
