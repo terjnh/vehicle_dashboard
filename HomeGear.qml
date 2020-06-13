@@ -23,7 +23,7 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 60
             font.family: "Bitstream Charter"
-            color: "lightgreen"
+            color: "#72d8f8"
         }
         Label {
             width: 100; height: 20

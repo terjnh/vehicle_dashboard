@@ -23,7 +23,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             text: "Status"
             font.pixelSize: 20
-            color: "#72d8f8"
+            color: "#2eff00"
         }
     }
 }

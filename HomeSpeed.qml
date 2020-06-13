@@ -37,6 +37,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 60
+            color: "#72d8f8"
         }
     }
 

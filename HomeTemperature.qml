@@ -35,7 +35,8 @@ Item {
                 id: lblTemperature
                 anchors.fill: parent
                 width: parent.width; height: parent.height
-                color: "white"
+                color: "#72d8f8"
+                font.bold: false; font.pixelSize: 16
                 text: Math.round((30 + temperatureValue/3) * 1.0 / 1.0) + " °C"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

@@ -39,6 +39,7 @@ Item {
         Label {
             id: lblFuel
             text: "F\n\n\n\n\n\nE"
+            color: "#72d8f8"
             font.pixelSize: 25
             anchors.left: fuelRect.right
             anchors.leftMargin: 5
