@@ -56,7 +56,7 @@ Item {
 
                 // Binds speed variable to speedValue in Q_PROPERTY (Timer C++ Class)
                 timerHome.speedValue = speed
-
+                homeTemperature.temperatureValue = (speed * 1.2)
             } //onValueChanged
         }
         Dial {

@@ -60,6 +60,7 @@ Item {
             text: "Fill Fuel"
             onClicked: {
                 increaseFuel.running = true
+                fuelData.fuelValue = fuelMax //FuelData C++ class fuel value updated
             }
         }
     }

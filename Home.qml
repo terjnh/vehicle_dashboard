@@ -89,7 +89,7 @@ Item {
     Column {
         id: colStatus
         width: 200
-        height: 120
+        height: 110
         anchors.left: rowSpeed.right
         anchors.leftMargin: 120
         anchors.top: rowSpeed.top
@@ -136,7 +136,12 @@ Item {
         width: colStatus.width; height: 100
         anchors.horizontalCenter: colStatus.horizontalCenter
         anchors.top: colStatus.bottom;
-        anchors.topMargin: 6
+        anchors.topMargin: 2
+        HomeTemperature {
+            id: homeTemperature
+            visible: false
+            //temperatureValue
+        }
     }
 
 

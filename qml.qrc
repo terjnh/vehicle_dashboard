@@ -13,5 +13,6 @@
         <file>HomeSaveLoad.qml</file>
         <file>HomeStatus.qml</file>
         <file>HomeIgnition.qml</file>
+        <file>HomeTemperature.qml</file>
     </qresource>
 </RCC>
