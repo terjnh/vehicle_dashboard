@@ -146,7 +146,7 @@ Item {
     Column {
         id: colMisc
         width: colStatus.width
-        height: 350
+        height: 300
         anchors.top: colTemperature.bottom
         anchors.left: colIgnition.right
         anchors.leftMargin: 40

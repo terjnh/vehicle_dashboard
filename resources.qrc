@@ -2,5 +2,7 @@
     <qresource prefix="/images">
         <file>images/turnSignalRight.png</file>
         <file>images/turnSignalLeft.png</file>
+        <file>images/engOil.png</file>
+        <file>images/battery.png</file>
     </qresource>
 </RCC>

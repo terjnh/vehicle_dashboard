@@ -11,9 +11,8 @@ Written in Qt, QML and C++
 
 #### HOME PAGE
 - [ ] HomeMisc.qml
-    - [ ] Add Turn Signal Icons (onClick: flashing animation runs?)
-    - [ ] Add Engine Check Icon (after certain distance, engine check turns on ?)
-    - [ ] Engine Oil Change Icon
+    - [X] Add Turn Signal Icons (onClick: flashing animation runs?)
+    - [ ] Engine Oil Change Icon (after 1000m it turns on, click to turn off)
     - [ ] Empty Fuel Icon
     - [ ] Headlights Icon (Off, Low Beam, High Beam)
 - [X] HomeDistance.qml
