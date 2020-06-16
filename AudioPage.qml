@@ -3,16 +3,17 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import QtQuick.Window 2.3
 import QtMultimedia 5.12
+import QtQuick.Controls.Styles 1.4
 
 Item {
     id: audiopage
 
-    //property var progressVal: (playMusic.position / playMusic.duration).toFixed(2);
+    Material.theme: Material.Dark
+    Material.accent: Material.LightBlue
 
 
     Item {
         id: itemSongs
-        x: 123
         width: 600
         height: 400
         anchors.top: parent.top
@@ -26,42 +27,54 @@ Item {
             clip: true
 
 
-
             Repeater {
                 id: repeater
                 model: SongsModel {}
 
                 Rectangle {
                     id: itemModelRect
+                    anchors.fill: songsSwipeView
                     color: "gray"
                     property var progressVal: (playMusic.position / playMusic.duration).toFixed(2);
 
                     Label {
                         id: lblSinger
                         width: 100; height: 100
-                        anchors.centerIn: parent
+                        x: 100; y: 100
                         color: "white"
                         text: index
                     }
-                    Button {
-                        id: playButton
-                        anchors.top: lblSinger.bottom
-                        width: 100; height: 50
-                        text: "Play"
-                        onClicked: {
-                            playMusic.play()
-                            console.log("playMusic playing")
+                    Row {
+                        id: controlBtnRow
+                        width: 330
+                        height: 60
+                        anchors.horizontalCenter: itemModelRect.horizontalCenter
+                        anchors.bottom: itemModelRect.bottom
+                        spacing: 10
+
+                        AudioButton {
+                            id: playButton
+                            lblAudioBtn: "PLAY"
+                            onClicked: {
+                                playMusic.play()
+                                console.log("playMusic Playing")
+                            }
                         }
-                    }
-                    Button {
-                        id: stopButton
-                        anchors.top: lblSinger.bottom
-                        anchors.left: playButton.right
-                        anchors.leftMargin: 10
-                        width: 100; height: 50
-                        text: "Stop"
-                        onClicked: {
-                            playMusic.stop()
+                        AudioButton {
+                            id: pauseButton
+                            lblAudioBtn: "PAUSE"
+                            onClicked: {
+                                playMusic.pause()
+                                onStopped: console.log("playMusic Paused")
+                            }
+                        }
+                        AudioButton {
+                            id: stopButton
+                            lblAudioBtn: "STOP"
+                            onClicked: {
+                                playMusic.stop()
+                                onStopped: console.log("playMusic Stopped")
+                            }
                         }
                     }
 
@@ -69,23 +82,18 @@ Item {
                         id: songProgressBar
                         width: itemSongs.width - 100
                         height: 60
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.bottom: playButton.top; anchors.topMargin: 5
+                        anchors.horizontalCenter: itemModelRect.horizontalCenter
+                        anchors.bottom: controlBtnRow.top; anchors.topMargin: 5
                         value: progressVal
                     }
 
                     Audio {
                         id: playMusic
                         source: audiofile
-
-                        onStopped: console.log("playMusic Stopped")
-                        onPaused: console.log("playMusic Pause")
                     }
                 } //Rectangle
             } //Repeater (id: repeater)
         } //SwipeView
     }
-
-
 }
 

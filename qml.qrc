@@ -18,5 +18,6 @@
         <file>IconsModel.qml</file>
         <file>Testing.qml</file>
         <file>SongsModel.qml</file>
+        <file>AudioButton.qml</file>
     </qresource>
 </RCC>
