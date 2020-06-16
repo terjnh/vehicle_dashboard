@@ -15,6 +15,7 @@ Written in Qt, QML and C++
     - [X] Engine Oil Change Icon (after 1000m it turns on, click to turn off)
     - [X] Battery Icon (Turns on when ignition is ON)
     - [ ] Headlights Icon (Off, Low Beam, High Beam)
+    - [ ] Move turn signal icons ?
 - [X] HomeDistance.qml
     - [ ] For aesthetics, keep distance timer with specific no. of "zeroes" in front of it
     - [X] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)
@@ -26,7 +27,6 @@ Written in Qt, QML and C++
 
 - [X] HomeSpeed.qml
     - [ ] RPM gauge: increases the "random" oscillation as speed increases
-    - [ ] Improve UI for engine start/stop
     - [ ] Improve UI for accelerate, brake pedals
     - [X] Added Engine Start / Engine Stop Button
     - [X] Add button to increase speed and decrease speed
@@ -54,12 +54,12 @@ Written in Qt, QML and C++
     - [X] Created Toggle Switch to turn Engine ON/OFF
 
 #### AUDIO PAGE
-- [ ] Play Button
-- [ ] Pause Button
-- [ ] Stop Button
-- [ ] Resume Button
-- [ ] Track play progress bar (Utilization of C++ Timer class)
+- [X] Play Button
+- [X] Pause Button
+- [X] Stop Button
+- [X] Track play progress bar
 - [ ] Volume Control
+- [ ] Seek control (Allow user input for song to skip etc.)
 
 #### TESTING PAGE
 - [X] Create testing components to save to JSON
