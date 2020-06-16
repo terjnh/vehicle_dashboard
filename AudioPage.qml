@@ -4,6 +4,7 @@ import QtQuick.Controls.Material 2.3
 import QtQuick.Window 2.3
 import QtMultimedia 5.12
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Shapes 1.12
 
 Item {
     id: audiopage
@@ -44,25 +45,66 @@ Item {
                         anchors.top: itemModelRect.top; anchors.topMargin: 60
                         spacing: 20
 
-                        Label {
+                        AudioLabel {
                             id: lblArtiste
-                            width: 100; height: 30
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
-                            color: "white"
                             text: "Artiste: " + author
-                            font.pixelSize: 22
                         }
-                        Label {
+                        AudioLabel {
                             id: lblSongTitle
-                            width: 100; height: 30
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
-                            color: "white"
                             text: "Song: " + song
-                            font.pixelSize: 22
                         }
                     }
+                    Column {
+                        id: volumeControlCol
+                        width: 100; height: 60
+                        anchors.left: displayInfoCol.right; anchors.leftMargin: -100
+                        anchors.top: displayInfoCol.top; anchors.topMargin: -10
+                        spacing: 8
+
+                        Slider {
+                            orientation: Qt.Vertical
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            width: 50; height: 120
+                            from: 0; to: 1
+                            value: playMusic.volume
+                            onMoved: {
+                                playMusic.volume = value
+                            }
+
+                            //AudioVolumeShape {}
+
+                            // Custom Slider
+                            background: Rectangle {
+                                opacity: 0.2
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                y: 0
+                                implicitWidth: 50
+                                implicitHeight: 120
+                                width: 32
+                                height: 120
+                                radius: 25
+                                color: "#bdbebf"
+
+                                Rectangle {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    width: 10
+                                    height: 120
+                                    color: "#21be2b"
+                                    radius: 5
+                                }
+                            } //Custom Slider
+                        }
+
+                        Label {
+                            id: volStatus
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            text: "Volume: " + Math.round(playMusic.volume * 100 * 1 / 1)
+                        }
+
+                    }
+
                     Row {
                         id: controlBtnRow
                         width: 330
@@ -109,6 +151,7 @@ Item {
                     Audio {
                         id: playMusic
                         source: audiofile
+                        volume: 0.5
                     }
                 } //Rectangle
             } //Repeater (id: repeater)

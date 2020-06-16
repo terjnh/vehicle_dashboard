@@ -19,5 +19,7 @@
         <file>Testing.qml</file>
         <file>SongsModel.qml</file>
         <file>AudioButton.qml</file>
+        <file>AudioLabel.qml</file>
+        <file>AudioVolumeShape.qml</file>
     </qresource>
 </RCC>
