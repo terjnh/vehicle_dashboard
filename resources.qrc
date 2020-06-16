@@ -4,5 +4,12 @@
         <file>images/turnSignalLeft.png</file>
         <file>images/engOil.png</file>
         <file>images/battery.png</file>
+        <file>images/headlightLowBeam.png</file>
+        <file>images/headlightHighBeam.png</file>
+    </qresource>
+    <qresource prefix="/audio">
+        <file>audio/Taylor Swift - Blank Space.mp3</file>
+        <file>audio/Ed-Sheeran_Shape-of-You.mp3</file>
+        <file>audio/Calum-Scott_You-are-the-reason.mp3</file>
     </qresource>
 </RCC>

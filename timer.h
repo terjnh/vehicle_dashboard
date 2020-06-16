@@ -46,7 +46,7 @@ private slots:
 
 private:
     QTimer m_timer;  //Retrieve speed every second, and calculate a distance value per sec
-    double const m_timerInterval = 2000.0;
+    double const m_timerInterval = 200.0; // ms
     double m_dist = 0.0;  //m_dist in metres
     int m_speed = 0;
 

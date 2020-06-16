@@ -12,8 +12,8 @@ Written in Qt, QML and C++
 #### HOME PAGE
 - [ ] HomeMisc.qml
     - [X] Add Turn Signal Icons (onClick: flashing animation runs?)
-    - [ ] Engine Oil Change Icon (after 1000m it turns on, click to turn off)
-    - [ ] Empty Fuel Icon
+    - [X] Engine Oil Change Icon (after 1000m it turns on, click to turn off)
+    - [X] Battery Icon (Turns on when ignition is ON)
     - [ ] Headlights Icon (Off, Low Beam, High Beam)
 - [X] HomeDistance.qml
     - [ ] For aesthetics, keep distance timer with specific no. of "zeroes" in front of it
@@ -61,8 +61,8 @@ Written in Qt, QML and C++
 - [ ] Track play progress bar (Utilization of C++ Timer class)
 - [ ] Volume Control
 
-Testing
-- [X] Create testing components to save to JSON [in Audio.qml]
+#### TESTING PAGE
+- [X] Create testing components to save to JSON
     - Current testing saves json file on Desktop
 
 

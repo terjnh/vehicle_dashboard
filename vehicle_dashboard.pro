@@ -1,4 +1,5 @@
 QT += quick
+QT += multimedia multimediawidgets
 
 CONFIG += c++11
 
@@ -17,6 +18,7 @@ SOURCES += \
         backend.cpp \
         fueldata.cpp \
         main.cpp \
+        media.cpp \
         timer.cpp
 
 RESOURCES += qml.qrc \
@@ -36,6 +38,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     backend.h \
     fueldata.h \
+    media.h \
     timer.h
 
 DISTFILES += \

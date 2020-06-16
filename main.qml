@@ -19,7 +19,10 @@ ApplicationWindow {
         Home {
         }
 
-        Audio {
+        AudioPage {
+        }
+
+        Testing {
         }
 
     }
@@ -36,5 +39,8 @@ ApplicationWindow {
             text: qsTr("Audio")
         }
 
+        TabButton {
+            text: qsTr("Testing")
+        }
     }
 }

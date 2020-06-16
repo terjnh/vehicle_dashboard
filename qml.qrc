@@ -3,7 +3,7 @@
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>Home.qml</file>
-        <file>Audio.qml</file>
+        <file>AudioPage.qml</file>
         <file>HomeFuelGauge.qml</file>
         <file>Intro.qml</file>
         <file>HomeWelcome.qml</file>
@@ -16,5 +16,7 @@
         <file>HomeTemperature.qml</file>
         <file>HomeMisc.qml</file>
         <file>IconsModel.qml</file>
+        <file>Testing.qml</file>
+        <file>SongsModel.qml</file>
     </qresource>
 </RCC>
