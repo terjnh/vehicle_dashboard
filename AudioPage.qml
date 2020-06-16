@@ -34,22 +34,41 @@ Item {
                 Rectangle {
                     id: itemModelRect
                     anchors.fill: songsSwipeView
-                    color: "gray"
+                    color: "#273746"
                     property var progressVal: (playMusic.position / playMusic.duration).toFixed(2);
 
-                    Label {
-                        id: lblSinger
-                        width: 100; height: 100
-                        x: 100; y: 100
-                        color: "white"
-                        text: index
+                    Column {
+                        id: displayInfoCol
+                        width: itemModelRect.width - 60; height: 300
+                        anchors.horizontalCenter: itemModelRect.horizontalCenter
+                        anchors.top: itemModelRect.top; anchors.topMargin: 60
+                        spacing: 20
+
+                        Label {
+                            id: lblArtiste
+                            width: 100; height: 30
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
+                            color: "white"
+                            text: "Artiste: " + author
+                            font.pixelSize: 22
+                        }
+                        Label {
+                            id: lblSongTitle
+                            width: 100; height: 30
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
+                            color: "white"
+                            text: "Song: " + song
+                            font.pixelSize: 22
+                        }
                     }
                     Row {
                         id: controlBtnRow
                         width: 330
                         height: 60
                         anchors.horizontalCenter: itemModelRect.horizontalCenter
-                        anchors.bottom: itemModelRect.bottom
+                        anchors.bottom: itemModelRect.bottom; anchors.bottomMargin: 30
                         spacing: 10
 
                         AudioButton {
