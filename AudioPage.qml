@@ -21,20 +21,12 @@ Item {
     }
 
 
-
-
     // Right Pillar
-    Item {
-        id: itemAniVisualRight
-        width: 150; height: 450
-        anchors.top: colVisualLeft.top; x: itemSongs.width + colVisualLeft.width + (colVisualLeft.x * 2)
-
-        //BouncyRedBallColumn {}
-//        Rectangle {
-//            anchors.fill: parent
-//            color: "yellow"; opacity: 0.2
-//        }
-    }
+//    Item {
+//        id: itemAniVisualRight
+//        width: 150; height: 450
+//        anchors.top: colVisualLeft.top; x: itemSongs.width + colVisualLeft.width + (colVisualLeft.x * 2)
+//    }
 
 
 
@@ -146,13 +138,29 @@ Item {
                         }
                     }
 
-                    ProgressBar {
-                        id: songProgressBar
+//                    ProgressBar {
+//                        id: songProgressBar
+//                        width: itemSongs.width - 100
+//                        height: 60
+//                        anchors.horizontalCenter: itemModelRect.horizontalCenter
+//                        anchors.bottom: controlBtnRow.top; anchors.topMargin: 5
+//                        value: progressVal
+//                    }
+
+                    Slider {
+                        id: trackSlider
                         width: itemSongs.width - 100
                         height: 60
                         anchors.horizontalCenter: itemModelRect.horizontalCenter
-                        anchors.bottom: controlBtnRow.top; anchors.topMargin: 5
+                        anchors.bottom: controlBtnRow.top; anchors.topMargin: 100
                         value: progressVal
+
+                        onMoved: {
+                            if(playMusic.seekable){
+                                value = position
+                                playMusic.seek(position * playMusic.duration)
+                            }
+                        }
                     }
 
                     Audio {
