@@ -6,12 +6,16 @@ import QtQuick.Controls.Styles 1.4
 
 
 Item {
-    id: itemAniVisualLeft
+    id: pillarVisuals
     width: parent.width; height: parent.height
     x: parent.x; y: parent.y
 
-    BouncyRedBall {}
-    BouncyRedBall { startX: 55 }
-    BouncyRedBall { startX: 105 }
-
+    BouncyRedBall { startX: 10; fallingDuration: 2500 }
+    BouncyRedBall { startX: 40; fallingDuration: 2700 }
+    BouncyRedBall { startX: 70; fallingDuration: 2900 }
+    BouncyRedBall { startX: 100; fallingDuration: 3100 }
+    BouncyRedBall { startX: 750; fallingDuration: 3300 }
+    BouncyRedBall { startX: 780; fallingDuration: 3500 }
+    BouncyRedBall { startX: 810; fallingDuration: 3700 }
+    BouncyRedBall { startX: 840; fallingDuration: 3900 }
 }

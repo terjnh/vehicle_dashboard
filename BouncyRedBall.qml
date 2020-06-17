@@ -4,11 +4,12 @@ import QtQuick.Controls.Material 2.3
 
 Rectangle {
 
-    property var startX: itemAniVisualLeft.x
-    property var startY: itemAniVisualLeft.height - ballWidth
+    property var startX: pillarVisuals.x
+    property var startY: pillarVisuals.height - ballWidth
     property var endY: 1
     property var ballWidth: 30
     property var ballHeight: ballWidth
+    property var fallingDuration: 3000
 
     id: bouncyBallRed
     x: startX; y: parent.height - ballHeight
@@ -25,9 +26,9 @@ Rectangle {
 
     SequentialAnimation {
         id: objRiseFallAni
-        running: false
-        loops: 1
+        running: true
+        loops: Animation.Infinite
         NumberAnimation { target: bouncyBallRed; property: "y"; from: startY; to: endY; duration: 1000; easing.type: Easing.OutSine; }
-        NumberAnimation { target: bouncyBallRed; property: "y"; from: endY; to: startY; duration: 3000; easing.type: Easing.OutBounce;}
+        NumberAnimation { id: fallAni; target: bouncyBallRed; property: "y"; from: endY; to: startY; duration: fallingDuration; easing.type: Easing.OutBounce;}
     }
 }

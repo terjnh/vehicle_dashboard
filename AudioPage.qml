@@ -29,10 +29,11 @@ Item {
         width: 150; height: 450
         anchors.top: colVisualLeft.top; x: itemSongs.width + colVisualLeft.width + (colVisualLeft.x * 2)
 
-        Rectangle {
-            anchors.fill: parent
-            color: "yellow"; opacity: 0.2
-        }
+        //BouncyRedBallColumn {}
+//        Rectangle {
+//            anchors.fill: parent
+//            color: "yellow"; opacity: 0.2
+//        }
     }
 
 
@@ -58,7 +59,8 @@ Item {
                 Rectangle {
                     id: itemModelRect
                     anchors.fill: songsSwipeView
-                    color: "#273746"
+                    color: "#474747"; opacity: 0.8
+                    radius: 20
                     property var progressVal: (playMusic.position / playMusic.duration).toFixed(2);
 
                     Column {
@@ -67,7 +69,6 @@ Item {
                         anchors.horizontalCenter: itemModelRect.horizontalCenter
                         anchors.top: itemModelRect.top; anchors.topMargin: 60
                         spacing: 20
-
                         AudioLabel {
                             id: lblArtiste
                             text: "Artiste: " + author
@@ -75,6 +76,12 @@ Item {
                         AudioLabel {
                             id: lblSongTitle
                             text: "Song: " + song
+                        }
+                        AudioLabel {
+                            id: lblMusicPlayStatus;
+                            visible: false
+                            text: "Track Playing"
+                            font.pixelSize: 16; color: "yellow"
                         }
                     }
                     Column {
@@ -94,7 +101,6 @@ Item {
                             verticalAlignment: Text.AlignVCenter
                             text: "Volume: " + Math.round(playMusic.volume * 100 * 1 / 1)
                         }
-
                     }
 
                     Row {
@@ -107,25 +113,34 @@ Item {
 
                         AudioButton {
                             id: playButton
+                            enabled: true
                             lblAudioBtn: "PLAY"
                             onClicked: {
                                 playMusic.play()
+                                lblMusicPlayStatus.visible = true
+                                playButton.enabled = false; pauseButton.enabled = true; stopButton.enabled = true
                                 console.log("playMusic Playing")
                             }
                         }
                         AudioButton {
                             id: pauseButton
+                            enabled: false
                             lblAudioBtn: "PAUSE"
                             onClicked: {
                                 playMusic.pause()
+                                lblMusicPlayStatus.visible = false
+                                playButton.enabled = true; pauseButton.enabled = false; stopButton.enabled = true
                                 onStopped: console.log("playMusic Paused")
                             }
                         }
                         AudioButton {
                             id: stopButton
+                            enabled: false
                             lblAudioBtn: "STOP"
                             onClicked: {
                                 playMusic.stop()
+                                lblMusicPlayStatus.visible = false
+                                stopButton.enabled = false; pauseButton.enabled = false; playButton.enabled = true
                                 onStopped: console.log("playMusic Stopped")
                             }
                         }
