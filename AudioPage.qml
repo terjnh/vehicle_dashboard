@@ -12,13 +12,38 @@ Item {
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
+    // Left Pillar
+    Item {
+        id: itemAniVisualLeft
+        width: 150; height: 450
+        x: 20; y: 20
+
+        Rectangle {
+            anchors.fill: parent
+            color: "yellow"; opacity: 0.2
+        }
+    }
+
+
+    // Right Pillar
+    Item {
+        id: itemAniVisualRight
+        width: 150; height: 450
+        anchors.top: itemAniVisualLeft.top; x: itemSongs.width + itemAniVisualLeft.width + (itemAniVisualLeft.x * 2)
+
+        Rectangle {
+            anchors.fill: parent
+            color: "yellow"; opacity: 0.2
+        }
+    }
+
+
 
     Item {
         id: itemSongs
         width: 600
-        height: 400
-        anchors.top: parent.top
-        anchors.topMargin: 20
+        height: 450
+        anchors.top: parent.top; anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter
 
 
@@ -61,39 +86,8 @@ Item {
                         anchors.top: displayInfoCol.top; anchors.topMargin: -10
                         spacing: 8
 
-                        Slider {
-                            orientation: Qt.Vertical
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            width: 50; height: 120
-                            from: 0; to: 1
-                            value: playMusic.volume
-                            onMoved: {
-                                playMusic.volume = value
-                            }
-
-                            //AudioVolumeShape {}
-
-                            // Custom Slider
-                            background: Rectangle {
-                                opacity: 0.2
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                y: 0
-                                implicitWidth: 50
-                                implicitHeight: 120
-                                width: 32
-                                height: 120
-                                radius: 25
-                                color: "#bdbebf"
-
-                                Rectangle {
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    width: 10
-                                    height: 120
-                                    color: "#21be2b"
-                                    radius: 5
-                                }
-                            } //Custom Slider
-                        }
+                        // Custom Slider for Volume. Also can use AudioVolumeShape.qml
+                        AudioCustomSlider {}
 
                         Label {
                             id: volStatus

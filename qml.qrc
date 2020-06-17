@@ -21,5 +21,6 @@
         <file>AudioButton.qml</file>
         <file>AudioLabel.qml</file>
         <file>AudioVolumeShape.qml</file>
+        <file>AudioCustomSlider.qml</file>
     </qresource>
 </RCC>
