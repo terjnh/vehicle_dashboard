@@ -13,23 +13,21 @@ Item {
     Material.accent: Material.LightBlue
 
     // Left Pillar
-    Item {
-        id: itemAniVisualLeft
+    Column {
+        id: colVisualLeft
         width: 150; height: 450
         x: 20; y: 20
-
-        Rectangle {
-            anchors.fill: parent
-            color: "yellow"; opacity: 0.2
-        }
+        BouncyRedBallColumn {}
     }
+
+
 
 
     // Right Pillar
     Item {
         id: itemAniVisualRight
         width: 150; height: 450
-        anchors.top: itemAniVisualLeft.top; x: itemSongs.width + itemAniVisualLeft.width + (itemAniVisualLeft.x * 2)
+        anchors.top: colVisualLeft.top; x: itemSongs.width + colVisualLeft.width + (colVisualLeft.x * 2)
 
         Rectangle {
             anchors.fill: parent

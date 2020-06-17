@@ -22,5 +22,7 @@
         <file>AudioLabel.qml</file>
         <file>AudioVolumeShape.qml</file>
         <file>AudioCustomSlider.qml</file>
+        <file>BouncyRedBallColumn.qml</file>
+        <file>BouncyRedBall.qml</file>
     </qresource>
 </RCC>
