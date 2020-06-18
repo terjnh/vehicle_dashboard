@@ -11,6 +11,7 @@ Item {
 
     GridView {
         id: gridView
+        visible: false  // Change to TRUE to see signals in Misc Container
         width: parent.width; height: parent.height / 4
         cellWidth: 100; cellHeight: 100
 

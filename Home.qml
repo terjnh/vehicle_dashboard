@@ -102,6 +102,33 @@ Item {
     }
 
     Column {
+        id: colIgnition
+        x: 645
+        y: 800
+        width: 160
+        height: 100
+        anchors.bottom: rowSpeed.bottom
+        anchors.bottomMargin: 30
+        anchors.left: rowSpeed.right
+        anchors.leftMargin: -60
+        HomeIgnition {
+            id: homeIgnition; visible: false;
+        }
+    }
+
+    Column {
+        id: colMisc
+        width: colStatus.width
+        height: 300
+        anchors.top: colTemperature.bottom
+        anchors.left: colIgnition.right
+        anchors.leftMargin: 40
+        HomeMisc {
+            id: homeMisc; visible: false;
+        }
+    }
+
+    Column {
         id: colTemperature
         width: colStatus.width; height: 100
         anchors.horizontalCenter: colStatus.horizontalCenter
@@ -127,33 +154,21 @@ Item {
         }
     }
 
-    Column {
-        id: colIgnition
-        x: 645
-        y: 800
-        width: 160
-        height: 100
-        anchors.bottom: rowSpeed.bottom
-        anchors.bottomMargin: 30
-        anchors.left: rowSpeed.right
-        anchors.leftMargin: -60
-        HomeIgnition {
-            id: homeIgnition; visible: false;
+    Row {
+        id: rowTurnSignals
+        width: 500
+        height: 80
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: colStatus.top
+
+        HomeTurnSignals {
+            id: homeTurnSignals; visible: false;
         }
     }
 
 
-    Column {
-        id: colMisc
-        width: colStatus.width
-        height: 300
-        anchors.top: colTemperature.bottom
-        anchors.left: colIgnition.right
-        anchors.leftMargin: 40
-        HomeMisc {
-            id: homeMisc; visible: false;
-        }
-    }
+
+
 
 
 

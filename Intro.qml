@@ -40,6 +40,7 @@ Item {
             homeIgnition.visible = true
             homeTemperature.visible = true
             homeMisc.visible = true
+            homeTurnSignals.visible = true
         }
     }
     ParallelAnimation {
