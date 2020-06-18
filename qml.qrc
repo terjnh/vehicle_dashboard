@@ -26,5 +26,7 @@
         <file>BouncyRedBall.qml</file>
         <file>HomeTurnSignals.qml</file>
         <file>HomeTurnSignalCustomSlider.qml</file>
+        <file>HomeGearNumRow.qml</file>
+        <file>HomeGearLabel.qml</file>
     </qresource>
 </RCC>

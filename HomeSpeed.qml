@@ -21,6 +21,9 @@ Item {
     // Use a jS function to assign value to gearValue, which changes based on variable speed
     property alias gearNum: speedpage.gearValue
     property var gearValue: gearCalc()
+
+    property alias dialSpeedValue: dialSpeed.value
+
     function gearCalc() {
         var gearValue = Math.round(speedpage.speed / 20);
         return gearValue;

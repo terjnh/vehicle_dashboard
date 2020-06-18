@@ -64,16 +64,33 @@ Item {
         }
     }
 
+
+    Row {
+        id: rowGearNums
+        width: rowSpeed.width; height: 50
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: rowSpeed.bottom; anchors.topMargin: -15
+
+        HomeGearNumRow {
+            id: homeGearNumRow; visible: false;
+        }
+    }
+
+
     Column {
         id: colDistance
         width: rowSpeed.width
         height: 50
-        anchors.top: rowSpeed.bottom
+        anchors.top: rowGearNums.bottom
         anchors.horizontalCenter: rowSpeed.horizontalCenter
         HomeDistance {
             id: homeDistance; visible: false;
         }
     }
+
+
+
+
 
     Column {
         id: colGear
