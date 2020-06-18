@@ -6,6 +6,7 @@ Item {
     width: parent.width; height: parent.height
 
     property alias status_info: lblStatus.text
+    property alias animateStatus: aniStatusChange.running
 
     Rectangle {
         id: rectStatus
@@ -25,5 +26,13 @@ Item {
             font.pixelSize: 20
             color: "#2eff00"
         }
+    }
+
+    SequentialAnimation {
+        id: aniStatusChange
+        running: false
+        loops: 3
+        NumberAnimation { target: lblStatus; property: "opacity"; from: 1.0; to: 0.2; duration: 600 }
+        NumberAnimation { target: lblStatus; property: "opacity"; from: 0.2; to: 1.0; duration: 600 }
     }
 }
