@@ -29,5 +29,6 @@
         <file>HomeGearNumRow.qml</file>
         <file>HomeGearLabel.qml</file>
         <file>HomeHeadLights.qml</file>
+        <file>HomeHeadLightsCustomSlider.qml</file>
     </qresource>
 </RCC>

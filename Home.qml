@@ -150,7 +150,7 @@ Item {
         id: rowHeadlights
         width: 320
         height: 80
-        anchors.top: colMisc.bottom; anchors.topMargin: -140
+        anchors.top: colMisc.bottom; anchors.topMargin: -160
         anchors.right: colMisc.right
 
         HomeHeadLights {

@@ -9,32 +9,34 @@ Item {
         id: headlightsRow
         anchors.fill: parent
 
-        Slider {
-            id: sliderHeadlight
-            orientation: Qt.Vertical
-            width: 40; height: parent.height
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.left: parent.left
-            anchors.leftMargin: 10
-            value: 0.0; from: 0.0; to: 1.0
-            snapMode: Slider.SnapAlways
-            stepSize: 0.5
+        HomeHeadLightsCustomSlider {}
 
-            onMoved: {
-                if(value == 0.5) {
-                    imgLowBeam.opacity = 1.0
-                    imgHighBeam.opacity = 0.2
-                }
-                else if(value == 1.0) {
-                    imgLowBeam.opacity = 0.2
-                    imgHighBeam.opacity = 1.0
-                }
-                else {
-                    imgLowBeam.opacity = 0.2
-                    imgHighBeam.opacity = 0.2
-                }
-            }
-        }
+//        Slider {
+//            id: sliderHeadlight
+//            orientation: Qt.Vertical
+//            width: 40; height: parent.height
+//            anchors.verticalCenter: parent.verticalCenter
+//            anchors.left: parent.left
+//            anchors.leftMargin: 10
+//            value: 0.0; from: 0.0; to: 1.0
+//            snapMode: Slider.SnapAlways
+//            stepSize: 0.5
+
+//            onMoved: {
+//                if(value == 0.5) {
+//                    imgLowBeam.opacity = 1.0
+//                    imgHighBeam.opacity = 0.2
+//                }
+//                else if(value == 1.0) {
+//                    imgLowBeam.opacity = 0.2
+//                    imgHighBeam.opacity = 1.0
+//                }
+//                else {
+//                    imgLowBeam.opacity = 0.2
+//                    imgHighBeam.opacity = 0.2
+//                }
+//            }
+//        }
 
         Image {
             id: imgLowBeam
