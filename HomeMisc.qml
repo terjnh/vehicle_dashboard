@@ -71,6 +71,7 @@ Item {
             anchors.topMargin: 0
             anchors.horizontalCenter: parent.horizontalCenter
             text: "L    O    R"
+            color: "#72d8f8"
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 18
         }

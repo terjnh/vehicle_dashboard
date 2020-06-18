@@ -46,7 +46,7 @@ Slider {
             anchors.verticalCenter: parent.verticalCenter
             width: 80
             height: 10
-            color: "#21be2b"
+            color: "#f7ff57"
             radius: 5
         }
     }

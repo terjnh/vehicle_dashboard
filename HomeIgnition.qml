@@ -28,14 +28,14 @@ Item {
                     engineState = "OFF"
                     timerHome.timerStop();
                     fuelData.timerStop();
-                    homeStatus.status_info = "Engine\nStopped"
+                    homeStatus.status_info = "Engine\nOFF"
                     homeMisc.batteryIcon.opacity = 0.2
                     console.log("Engine: " + engineState)
                 } else {
                     engineState = "ON"
                     timerHome.timerStart();
                     fuelData.timerStart();
-                    homeStatus.status_info = "Engine\nStarted"
+                    homeStatus.status_info = "Engine\nON"
                     homeMisc.batteryIcon.opacity = 1.0
                     console.log("Engine: " + engineState)
                 }
