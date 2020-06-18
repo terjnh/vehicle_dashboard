@@ -6,6 +6,7 @@ Item {
     width: parent.width; height: parent.height
 
     property alias status_info: lblStatus.text
+    property alias status_info_size: lblStatus.font.pixelSize
     property alias animateStatus: aniStatusChange.running
 
     Rectangle {

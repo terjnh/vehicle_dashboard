@@ -17,7 +17,8 @@ Item {
         Label {
             id: lblDistance
             anchors.centerIn: parent
-            font.family: "Bitstream Charter"
+            // font.family: "Bitstream Charter"
+            color: "#72d8f8"
             font.pixelSize: 28
             text: timerHome.distanceTotal + " m"
         }

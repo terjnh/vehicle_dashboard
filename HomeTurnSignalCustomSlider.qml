@@ -16,6 +16,9 @@ Slider {
             homeTurnSignals.animationTurnLeft = true
             homeTurnSignals.animationTurnRight = false
             homeTurnSignals.rightSignalOpacity = 0.2
+            homeStatus.status_info = "<";
+            homeStatus.status_info_size = 30
+            homeStatus.animateStatus = true
             console.log("Left Turn Signal triggered")
         }
         if(value == 0.5) {
@@ -23,11 +26,15 @@ Slider {
             homeTurnSignals.animationTurnRight = false
             homeTurnSignals.rightSignalOpacity = 0.2
             homeTurnSignals.leftSignalOpacity = 0.2
+            homeStatus.status_info = ""
         }
         if(value == 1.0) {
             homeTurnSignals.animationTurnLeft = false
             homeTurnSignals.animationTurnRight = true
             homeTurnSignals.leftSignalOpacity = 0.2
+            homeStatus.status_info = ">"
+            homeStatus.status_info_size = 30
+            homeStatus.animateStatus = true
             console.log("Right Turn Signal triggered")
         }
     }

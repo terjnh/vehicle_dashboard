@@ -29,6 +29,7 @@ Item {
                     timerHome.timerStop();
                     fuelData.timerStop();
                     homeStatus.status_info = "Engine\nOFF"
+                    homeStatus.status_info_size = 20
                     homeStatus.animateStatus = true
                     homeMisc.batteryIcon.opacity = 0.2
                     console.log("Engine: " + engineState)
@@ -37,6 +38,7 @@ Item {
                     timerHome.timerStart();
                     fuelData.timerStart();
                     homeStatus.status_info = "Engine\nON"
+                    homeStatus.status_info_size = 20
                     homeStatus.animateStatus = true
                     homeMisc.batteryIcon.opacity = 1.0
                     console.log("Engine: " + engineState)
