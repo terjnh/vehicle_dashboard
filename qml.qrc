@@ -25,5 +25,6 @@
         <file>BouncyRedBallColumn.qml</file>
         <file>BouncyRedBall.qml</file>
         <file>HomeTurnSignals.qml</file>
+        <file>HomeTurnSignalCustomSlider.qml</file>
     </qresource>
 </RCC>

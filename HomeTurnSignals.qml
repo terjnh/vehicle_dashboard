@@ -7,6 +7,8 @@ Item {
 
     property alias animationTurnLeft: aniLeftTurnSignal.running
     property alias animationTurnRight: aniRightTurnSignal.running
+    property alias leftSignalOpacity: imageLeftSig.opacity
+    property alias rightSignalOpacity: imageRightSig.opacity
 
     Row {
         id: turnsignalRow
@@ -17,13 +19,6 @@ Item {
             opacity: 0.2
             anchors.left: parent.left; anchors.leftMargin: 35
             source: "qrc:/images/images/turnSignalLeft.png"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    aniLeftTurnSignal.running = true
-                    console.log("Left Turn Signal triggered")
-                }
-            } //MouseArea
         }
         Image {
             id: imageRightSig
@@ -31,13 +26,6 @@ Item {
             opacity: 0.2
             anchors.right: parent.right; anchors.rightMargin: 40
             source: "qrc:/images/images/turnSignalRight.png"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    aniRightTurnSignal.running = true
-                    console.log("Right Turn Signal triggered")
-                }
-            } //MouseArea
         }
 
         // Left Turn Signal Animation

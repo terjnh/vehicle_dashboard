@@ -62,28 +62,8 @@ Item {
         width: parent.width; height: parent.height / 3
         spacing: 10
 
-        Slider {
-            id: sliderTurnSignal
-            width: 80; height: 30
-            anchors.centerIn: parent
-            snapMode: Slider.SnapAlways
-            stepSize: 0.5
-            value: 0.5
-            onMoved: {
-                if(value == 0.0) {
-                    homeTurnSignals.animationTurnLeft = true
-                    homeTurnSignals.animationTurnRight = false
-                }
-                if(value == 0.5) {
-                    homeTurnSignals.animationTurnLeft = false
-                    homeTurnSignals.animationTurnRight = false
-                }
-                if(value == 1.0) {
-                    homeTurnSignals.animationTurnLeft = false
-                    homeTurnSignals.animationTurnRight = true
-                }
-            }
-        }
+        HomeTurnSignalCustomSlider { id: sliderTurnSignal }
+
         Label {
             id: lblTurnSignal
             width: 80; height: 30
