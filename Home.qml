@@ -145,6 +145,20 @@ Item {
         }
     }
 
+
+    Row {
+        id: rowHeadlights
+        width: 320
+        height: 80
+        anchors.top: colMisc.bottom; anchors.topMargin: -140
+        anchors.right: colMisc.right
+
+        HomeHeadLights {
+            id: homeHeadLights; visible: false
+        }
+    }
+
+
     Column {
         id: colTemperature
         width: colStatus.width; height: 100

@@ -28,5 +28,6 @@
         <file>HomeTurnSignalCustomSlider.qml</file>
         <file>HomeGearNumRow.qml</file>
         <file>HomeGearLabel.qml</file>
+        <file>HomeHeadLights.qml</file>
     </qresource>
 </RCC>

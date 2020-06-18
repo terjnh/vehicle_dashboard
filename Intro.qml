@@ -42,6 +42,7 @@ Item {
             homeMisc.visible = true
             homeTurnSignals.visible = true
             homeGearNumRow.visible = true
+            homeHeadLights.visible = true
         }
     }
     ParallelAnimation {
