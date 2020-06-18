@@ -33,7 +33,7 @@ Item {
             fuelgauge.visible = true
             welcomeLabel.visible = true
             speedDisplay.visible = true
-            homeGear.visible = true
+            // homeGear.visible = true
             homeDistance.visible = true
             homeSaveLoad.visible = true
             homeStatus.visible = true
