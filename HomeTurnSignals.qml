@@ -5,6 +5,9 @@ import QtQuick.Controls.Material 2.3
 Item {
     width: parent.width; height: parent.height
 
+    property alias animationTurnLeft: aniLeftTurnSignal.running
+    property alias animationTurnRight: aniRightTurnSignal.running
+
     Row {
         id: turnsignalRow
         anchors.fill: parent
@@ -41,7 +44,7 @@ Item {
         SequentialAnimation {
             id: aniLeftTurnSignal
             running: false
-            loops: 5
+            loops: 20
             NumberAnimation { target: imageLeftSig; property: "opacity"; from: 0.2; to: 1; duration: 500 }
             NumberAnimation { target: imageLeftSig; property: "opacity"; from: 1; to: 0; duration: 300 }
             NumberAnimation { target: imageLeftSig; property: "opacity"; from: 0; to: 0.2; duration: 200 }
@@ -51,7 +54,7 @@ Item {
         SequentialAnimation {
             id: aniRightTurnSignal
             running: false
-            loops: 5
+            loops: 20
             NumberAnimation { target: imageRightSig; property: "opacity"; from: 0.2; to: 1; duration: 500 }
             NumberAnimation { target: imageRightSig; property: "opacity"; from: 1; to: 0; duration: 300 }
             NumberAnimation { target: imageRightSig; property: "opacity"; from: 0; to: 0.2; duration: 200 }

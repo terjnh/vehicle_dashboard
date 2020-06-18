@@ -9,6 +9,7 @@ Item {
     property alias engineOilIcon: engineOilIcon
     property alias batteryIcon: batteryIcon
 
+    // GRIDVIEW IS TURNED OFF //
     GridView {
         id: gridView
         visible: false  // Change to TRUE to see signals in Misc Container
@@ -50,6 +51,50 @@ Item {
             }
         } //delegate: Column
     }//GridView (id: gridView)
+
+    // Slider for Turn Signal [3 states: Left / Right / Off ]
+    Column {
+        id: colTurnSigSwitch
+        anchors.left: gridView.left
+        anchors.leftMargin: -20
+        anchors.top: gridView.top
+        anchors.topMargin: -30
+        width: parent.width; height: parent.height / 3
+        spacing: 10
+
+        Slider {
+            id: sliderTurnSignal
+            width: 80; height: 30
+            anchors.centerIn: parent
+            snapMode: Slider.SnapAlways
+            stepSize: 0.5
+            value: 0.5
+            onMoved: {
+                if(value == 0.0) {
+                    homeTurnSignals.animationTurnLeft = true
+                    homeTurnSignals.animationTurnRight = false
+                }
+                if(value == 0.5) {
+                    homeTurnSignals.animationTurnLeft = false
+                    homeTurnSignals.animationTurnRight = false
+                }
+                if(value == 1.0) {
+                    homeTurnSignals.animationTurnLeft = false
+                    homeTurnSignals.animationTurnRight = true
+                }
+            }
+        }
+        Label {
+            id: lblTurnSignal
+            width: 80; height: 30
+            anchors.top: sliderTurnSignal.bottom
+            anchors.topMargin: 0
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "L    O    R"
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 18
+        }
+    }
 
     Column {
         id: colMiddleRow
