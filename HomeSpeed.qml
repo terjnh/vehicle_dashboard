@@ -89,17 +89,28 @@ Item {
             id: brakePedal
             width: 60; height: 100
             radius: 10
-            Label {
+            opacity: homeIgnition.engineState == "ON" ? 0.7 : 0.2
+//            Label {
+//                anchors.centerIn: parent
+//                text: "S"; font.pixelSize: 40
+//                color: "black"
+//            }
+            Image {
                 anchors.centerIn: parent
-                text: "S"; font.pixelSize: 40
-                color: "black"
+                width: 55; height: 60
+                source: "qrc:/images/images/brakeIcon.png"
             }
+
             MouseArea {
                 anchors.fill: parent
                 onPressAndHold: {
                     speedDecrease.running = false
                     speedDecrease.duration = 2000
                     speedDecrease.running = true
+                    brakePedal.color = "#ff4b4b"; brakePedal.opacity = 0.6
+                }
+                onReleased: {
+                    brakePedal.color = "white"; brakePedal.opacity = 0.7
                 }
             }
         }
@@ -108,7 +119,7 @@ Item {
             id: acceleratePedal
             width: 60; height: 100
             radius: 10
-            color: homeIgnition.engineState == "ON" ? opacity = 1.0 : opacity = 0.2
+            opacity: homeIgnition.engineState == "ON" ? 0.7 : 0.2
             Image {
                 anchors.centerIn: parent
                 width: 50; height: 70
@@ -122,13 +133,13 @@ Item {
                     speedDecrease.running = false
                     speedIncrease.running = true
                     gearCalc()
-                    acceleratePedal.color = "lightgreen"; acceleratePedal.opacity = 0.8
+                    acceleratePedal.color = "lightgreen"; acceleratePedal.opacity = 0.6
                 }
                 onReleased: {
                     speedIncrease.running = false
                     speedDecrease.duration = decelerateDuration  //after brakePedal is released, increase brake duration
                     speedDecrease.running = true
-                    acceleratePedal.color = "white"; acceleratePedal.opacity = 1.0
+                    acceleratePedal.color = "white"; acceleratePedal.opacity = 0.7
                 }
             }
         } //Rectangle(id: acceleratePedal)

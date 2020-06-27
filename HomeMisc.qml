@@ -9,6 +9,10 @@ Item {
     property alias engineOilIcon: engineOilIcon
     property alias batteryIcon: batteryIcon
 
+
+
+
+
     // GRIDVIEW IS TURNED OFF //
     GridView {
         id: gridView
@@ -52,6 +56,10 @@ Item {
         } //delegate: Column
     }//GridView (id: gridView)
 
+
+
+
+
     // Slider for Turn Signal [3 states: Left / Right / Off ]
     Column {
         id: colTurnSigSwitch
@@ -93,9 +101,14 @@ Item {
                 opacity: (timerHome.distanceTotal > 1000) ? 1.0 : 0.2
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: parent.opacity = 0.2
+                    onClicked: {
+                        parent.opacity = 0.2
+                        homeStatus.status_info = "Engine Oil\nChanged"
+                        homeStatus.status_info_size = 20
+                        homeStatus.animateStatus = true
+                    }
                 }
-            }
+            } //Image (id: engineOilIcon)
 
             Image {
                 id: batteryIcon
