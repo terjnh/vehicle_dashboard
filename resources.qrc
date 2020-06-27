@@ -6,6 +6,7 @@
         <file>images/battery.png</file>
         <file>images/headlightLowBeam.png</file>
         <file>images/headlightHighBeam.png</file>
+        <file>images/gasPedal.png</file>
     </qresource>
     <qresource prefix="/audio">
         <file>audio/Taylor Swift - Blank Space.mp3</file>

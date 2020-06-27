@@ -10,12 +10,14 @@ Written in Qt, QML and C++
 ### TO-DO
 
 #### HOME PAGE
-- [ ] HomeMisc.qml
+- [X] HomeTurnSignals.qml
+    - [ ] Hazard Light Button
+- [X] HomeMisc.qml
     - [X] Add Turn Signal Icons (onClick: flashing animation runs?)
     - [X] Engine Oil Change Icon (after 1000m it turns on, click to turn off)
     - [X] Battery Icon (Turns on when ignition is ON)
-    - [ ] Headlights Icon (Off, Low Beam, High Beam)
-    - [ ] Move turn signal icons ?
+    - [X] Headlights Icon (Off, Low Beam, High Beam)
+    - [X] Move turn signal icons
 - [X] HomeDistance.qml
     - [ ] For aesthetics, keep distance timer with specific no. of "zeroes" in front of it
     - [X] Update QML component in HomeDistance.qml to reflect calculated distance per timeout (Distance meter in UI to update every second)
@@ -34,7 +36,7 @@ Written in Qt, QML and C++
 
 - [X] HomeFuelGauge.qml
     - [X] 'Empty Fuel' and 'Fill Fuel' button allows UI to show more realistic animation
-- [ ] Add temperature monitoring
+- [X] Add temperature monitoring
 - [ ] Disable accelerate / brake pedals when engine start is OFF
 - [X] HomeWelcome.qml
     - [X] Make a Label: "Welcome User"
@@ -58,8 +60,8 @@ Written in Qt, QML and C++
 - [X] Pause Button
 - [X] Stop Button
 - [X] Track play progress bar
-- [ ] Volume Control
-- [ ] Seek control (Allow user input for song to skip etc.)
+- [X] Volume Control
+- [X] Seek control (Allow user input for song to skip etc.)
 
 #### TESTING PAGE
 - [X] Create testing components to save to JSON

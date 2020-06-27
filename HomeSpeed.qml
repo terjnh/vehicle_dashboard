@@ -65,7 +65,7 @@ Item {
         }
         Dial {
             id: dialRpm
-            value: rpm
+            value: 0.05
 
             SequentialAnimation {
                 id: aniDialRpm
@@ -108,12 +108,13 @@ Item {
             id: acceleratePedal
             width: 60; height: 100
             radius: 10
-            color: homeIgnition.engineState == "ON" ? "white" : "black"
-            Label {
+            color: homeIgnition.engineState == "ON" ? opacity = 1.0 : opacity = 0.2
+            Image {
                 anchors.centerIn: parent
-                text: "W"; font.pixelSize: 40
-                color: "black"
+                width: 50; height: 70
+                source: "qrc:/images/images/gasPedal.png"
             }
+
             MouseArea {
                 anchors.fill: parent
                 enabled: homeIgnition.engineState == "ON" ? true : false
@@ -121,57 +122,17 @@ Item {
                     speedDecrease.running = false
                     speedIncrease.running = true
                     gearCalc()
+                    acceleratePedal.color = "lightgreen"; acceleratePedal.opacity = 0.8
                 }
                 onReleased: {
                     speedIncrease.running = false
                     speedDecrease.duration = decelerateDuration  //after brakePedal is released, increase brake duration
                     speedDecrease.running = true
+                    acceleratePedal.color = "white"; acceleratePedal.opacity = 1.0
                 }
             }
-        }
+        } //Rectangle(id: acceleratePedal)
 
-//        Rectangle {
-//            id: engineStarter
-//            width: 25; height: 100
-//            color: "red"
-//            radius: 10
-//            Label {
-//                anchors.centerIn: parent
-//                text: "1"; font.pixelSize: 20
-//                color: "black"
-//            }
-//            MouseArea {
-//                id: mAreaEngineStart
-//                anchors.fill: parent
-//                onClicked: {
-//                    engineStarter.color = "lightgreen";
-//                    timerHome.timerStart();
-//                    fuelData.timerStart();
-//                    homeStatus.status_info = "Engine\nStarted"
-//                }
-//            }
-//        }
-//        Rectangle {
-//            id: engineStopper
-//            width: 25; height: 100
-//            color: "red"
-//            radius: 10
-//            Label {
-//                anchors.centerIn: parent
-//                text: "0"; font.pixelSize: 20
-//                color: "black"
-//            }
-//            MouseArea {
-//                id: mAreaEngineStop
-//                anchors.fill: parent
-//                onClicked: {
-//                    engineStopper.color = "lightgreen";
-//                    timerHome.timerStop();
-//                    fuelData.timerStop();
-//                    homeStatus.status_info = "Engine\nStopped"
-//                }
-//            }
-//        }
     }
 
 
